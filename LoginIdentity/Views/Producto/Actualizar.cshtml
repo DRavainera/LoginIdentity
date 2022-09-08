@@ -1,0 +1,49 @@
+﻿@model Producto
+@{
+    ViewData["Title"] = "Actualizar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="card">
+    <h5 class="card-header">Editar un producto</h5>
+    <div class="card-body">
+        <form asp-action="Actualizar" asp-controller="Producto" method="post">
+
+            <input asp-for="Id" type="hidden" class="form-control" />
+
+            <div class="mb-3 input-group">
+                <label class="form-label input-group-text">Nombre</label>
+                <input asp-for="Nombre" type="text" class="form-control">
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3 input-group">
+                <label class="form-label input-group-text">Modelo</label>
+                <input asp-for="Modelo" type="text" class="form-control">
+                <span asp-validation-for="Modelo" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3 input-group">
+                <label class="form-label input-group-text">Descripción</label>
+                <input asp-for="Descripcion" type="text" class="form-control">
+                <span asp-validation-for="Descripcion" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3 input-group">
+                <label class="form-label input-group-text">Costo</label>
+                <input asp-for="Costo" type="number" class="form-control">
+                <span asp-validation-for="Costo" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3 input-group">
+                <label class="form-label input-group-text">Stock</label>
+                <input asp-for="Stock" type="number" class="form-control">
+                <span asp-validation-for="Stock" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Guardar</button>
+
+            <a asp-action="Index" asp-controller="Producto" class="btn btn-secondary">Volver</a>
+        </form>
+    </div>
+</div>
